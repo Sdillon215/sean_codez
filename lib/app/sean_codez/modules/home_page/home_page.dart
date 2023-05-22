@@ -6,8 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sean_codez/app/app.dart';
 import 'package:sean_codez/blocs/blocs.dart';
 import 'package:sean_codez/widgets/widget.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final Random random = Random();
-  bool _hover = false;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                       curve: Curves.easeIn,
                     ),
                 Align(
-                  alignment: const Alignment(0, -0.3),
+                  alignment: const Alignment(0, -0.5),
                   child: SizedBox(
                     key: UniqueKey(),
                     child: Column(
