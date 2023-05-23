@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                       curve: Curves.easeIn,
                     ),
                 Align(
-                  alignment: const Alignment(0, -0.5),
+                  alignment: const Alignment(0, -0.4),
                   child: SizedBox(
                     key: UniqueKey(),
                     child: Column(
