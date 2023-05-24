@@ -43,7 +43,7 @@ class _PortfolioScaffoldState extends State<PortfolioScaffold> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor.withOpacity(0.8),
+        backgroundColor: Theme.of(context).primaryColor.withOpacity(0.9),
         shape: Border(
           bottom: BorderSide(
             color: Theme.of(context).primaryColorLight,
@@ -77,7 +77,7 @@ class _PortfolioScaffoldState extends State<PortfolioScaffold> {
               children: [
                 TextButton(
                   onPressed: () {
-                    VRouter.of(context).to('/');
+                    VRouter.of(context).to('/work');
                   },
                   style: ButtonStyle(
                     overlayColor: MaterialStateProperty.resolveWith(

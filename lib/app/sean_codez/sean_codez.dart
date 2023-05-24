@@ -72,21 +72,21 @@ class SeanCodez extends StatelessWidget {
               child: child,
             ),
           ),
-          // VWidget(
-          //   path: '/shop',
-          //   widget: const PortfolioScaffold(
-          //     page: Shop(),
-          //     title: 'Shop',
-          //   ),
-          //   transitionDuration: const Duration(
-          //     milliseconds: 500,
-          //   ),
-          //   buildTransition: (animation, secondaryAnimation, child) =>
-          //       FadeTransition(
-          //     opacity: animation,
-          //     child: child,
-          //   ),
-          // ),
+          VWidget(
+            path: '/work',
+            widget: const PortfolioScaffold(
+              page: Work(),
+              title: 'work',
+            ),
+            transitionDuration: const Duration(
+              milliseconds: 500,
+            ),
+            buildTransition: (animation, secondaryAnimation, child) =>
+                FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+          ),
           VWidget(
             path: '/about',
             widget: const PortfolioScaffold(
