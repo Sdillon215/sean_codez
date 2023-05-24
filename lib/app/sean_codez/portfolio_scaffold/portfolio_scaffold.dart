@@ -50,6 +50,7 @@ class _PortfolioScaffoldState extends State<PortfolioScaffold> {
             width: 1,
           ),
         ),
+        toolbarHeight: 60,
         leadingWidth: 80,
         leading: TextButton(
           onPressed: () {

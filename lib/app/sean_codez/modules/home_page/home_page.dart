@@ -68,12 +68,20 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Text(
                           'Sean Dillon',
-                          style: Theme.of(context)
-                              .textTheme
-                              .displayLarge!
-                              .copyWith(
-                                color: Theme.of(context).primaryColorLight,
-                              ),
+                          style: MediaQuery.of(context).size.width <
+                                  mobileBreakpoint
+                              ? Theme.of(context)
+                                  .textTheme
+                                  .displayMedium!
+                                  .copyWith(
+                                    color: Theme.of(context).primaryColorLight,
+                                  )
+                              : Theme.of(context)
+                                  .textTheme
+                                  .displayLarge!
+                                  .copyWith(
+                                    color: Theme.of(context).primaryColorLight,
+                                  ),
                         ),
                         Text(
                           'Nomad | Full Stack Engineer | Climber',
