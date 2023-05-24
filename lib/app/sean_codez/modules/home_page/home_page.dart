@@ -1,11 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sean_codez/app/app.dart';
 import 'package:sean_codez/blocs/blocs.dart';
-import 'package:sean_codez/widgets/widget.dart';
+import 'package:sean_codez/widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SeanCodezBloc, SeanCodezState>(
@@ -80,19 +77,33 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           'Nomad | Full Stack Engineer | Climber',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .copyWith(
-                                color: Theme.of(context).primaryColorLight,
-                              ),
+                          style: MediaQuery.of(context).size.width <
+                                  mobileBreakpoint
+                              ? Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .copyWith(
+                                    color: Theme.of(context).primaryColorLight,
+                                  )
+                              : Theme.of(context)
+                                  .textTheme
+                                  .headlineSmall!
+                                  .copyWith(
+                                    color: Theme.of(context).primaryColorLight,
+                                  ),
                         ),
                         Divider(
                           color: Theme.of(context).primaryColorLight,
                           thickness: 1,
                           height: 48,
-                          indent: MediaQuery.of(context).size.width * 0.3,
-                          endIndent: MediaQuery.of(context).size.width * 0.3,
+                          indent: MediaQuery.of(context).size.width <
+                                  tabletBreakpoint
+                              ? MediaQuery.of(context).size.width * 0.05
+                              : MediaQuery.of(context).size.width * 0.3,
+                          endIndent: MediaQuery.of(context).size.width <
+                                  tabletBreakpoint
+                              ? MediaQuery.of(context).size.width * 0.05
+                              : MediaQuery.of(context).size.width * 0.3,
                         ),
                         Flex(
                           direction: MediaQuery.of(context).size.width >

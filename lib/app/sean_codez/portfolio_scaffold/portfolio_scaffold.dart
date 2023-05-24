@@ -1,9 +1,7 @@
 import 'dart:ui';
 
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:sean_codez/app/sean_codez/portfolio_scaffold/footer/footer.dart';
 // import 'package:sean_codez/apps/sean_codez/vibes_scaffold/nav_drawer/nav_drawer.dart';
 import 'package:flutter/material.dart' hide NavigationDrawer;
 import 'package:inview_notifier_list/inview_notifier_list.dart';

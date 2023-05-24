@@ -50,9 +50,9 @@ class SeanCodez extends StatelessWidget {
           useMaterial3: true,
         ),
         darkTheme: ThemeData(
-          primaryColor: Color.fromARGB(255, 0, 0, 0),
-          primaryColorLight: Color.fromARGB(255, 255, 255, 255),
-          primaryColorDark: Color.fromARGB(255, 97, 100, 105),
+          primaryColor: const Color.fromARGB(255, 0, 0, 0),
+          primaryColorLight: const Color.fromARGB(255, 255, 255, 255),
+          primaryColorDark: const Color.fromARGB(255, 97, 100, 105),
           fontFamily: GoogleFonts.heebo().fontFamily,
           useMaterial3: true,
         ),
