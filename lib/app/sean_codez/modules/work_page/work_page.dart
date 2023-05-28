@@ -19,68 +19,60 @@ class _WorkState extends State<Work> {
   Widget build(BuildContext context) {
     return BlocBuilder<SeanCodezBloc, SeanCodezState>(
         builder: (context, appState) {
-      return SliverList(
+      return SliverFixedExtentList(
+        itemExtent: MediaQuery.of(context).size.height,
         delegate: SliverChildListDelegate(
           [
-            Container(
-              color: appState.darkTheme
-                  ? Theme.of(context).colorScheme.onBackground
-                  : Theme.of(context).colorScheme.onSurfaceVariant,
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  Center(
-                    child: Card(
-                      child: ProjectCardDesktop(),
-                    ),
+            Stack(
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: Image.asset(
+                    'assets/images/sunset.jpg',
+                    fit: BoxFit.cover,
                   ),
-                ],
-              ),
-            ),
-            Container(
-              color: appState.darkTheme
-                  ? Theme.of(context).colorScheme.onBackground
-                  : Theme.of(context).colorScheme.onSurfaceVariant,
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  Center(
-                    child: Card(
-                      child: ProjectCardDesktop(),
+                ).animate().fadeIn(
+                      duration: 1000.ms,
+                      curve: Curves.easeIn,
                     ),
+                // AnimatedCrossFade(
+                //   duration: 4000.ms,
+                //   crossFadeState: appState.darkTheme
+                //       ? CrossFadeState.showFirst
+                //       : CrossFadeState.showSecond,
+                //   firstChild: SizedBox(
+                //     width: MediaQuery.of(context).size.width,
+                //     height: MediaQuery.of(context).size.height,
+                //     child: Image.asset(
+                //       'assets/images/castle_valley_invert.png',
+                //       fit: BoxFit.cover,
+                //     ),
+                //   ),
+                //   secondChild: SizedBox(
+                //     width: MediaQuery.of(context).size.width,
+                //     height: MediaQuery.of(context).size.height,
+                //     child: Image.asset(
+                //       'assets/images/castle_valley.jpg',
+                //       fit: BoxFit.cover,
+                //     ),
+                //   ),
+                // ).animate().fadeIn(
+                //       delay: 1000.ms,
+                //       duration: 4000.ms,
+                //       curve: Curves.easeIn,
+                //     ),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ProjectCardDesktop(),
+                      ProjectCardDesktop(),
+                      ProjectCardDesktop(),
+                      ProjectCardDesktop(),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            Container(
-              color: appState.darkTheme
-                  ? Theme.of(context).colorScheme.onBackground
-                  : Theme.of(context).colorScheme.onSurfaceVariant,
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  Center(
-                    child: Card(
-                      child: ProjectCardDesktop(),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              color: appState.darkTheme
-                  ? Theme.of(context).colorScheme.onBackground
-                  : Theme.of(context).colorScheme.onSurfaceVariant,
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  Center(
-                    child: Card(
-                      child: ProjectCardDesktop(),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
