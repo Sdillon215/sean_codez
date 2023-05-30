@@ -44,14 +44,14 @@ class SeanCodez extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           primaryColor: const Color(0xFF111928),
-          primaryColorLight: const Color(0xFF958686),
-          primaryColorDark: const Color(0xFF000714),
+          primaryColorLight: const  Color(0xFFFFFFFF),
+          primaryColorDark: Color.fromARGB(255, 0, 22, 61),
           fontFamily: GoogleFonts.heebo().fontFamily,
           useMaterial3: true,
         ),
         darkTheme: ThemeData(
           primaryColor: const Color.fromARGB(255, 0, 0, 0),
-          primaryColorLight: const Color.fromARGB(255, 255, 255, 255),
+          primaryColorLight: const Color(0xFFFFFFFF),
           primaryColorDark: const Color.fromARGB(255, 97, 100, 105),
           fontFamily: GoogleFonts.heebo().fontFamily,
           useMaterial3: true,
