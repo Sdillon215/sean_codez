@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                       curve: Curves.easeIn,
                     ),
                 AnimatedCrossFade(
-                  duration: 4000.ms,
+                  duration: 3000.ms,
                   crossFadeState: appState.darkTheme
                       ? CrossFadeState.showFirst
                       : CrossFadeState.showSecond,
@@ -55,8 +55,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ).animate().fadeIn(
-                      delay: 1000.ms,
-                      duration: 4000.ms,
+                      delay: 500.ms,
+                      duration: 3000.ms,
                       curve: Curves.easeIn,
                     ),
                 Align(

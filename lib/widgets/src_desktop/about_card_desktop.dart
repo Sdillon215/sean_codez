@@ -138,7 +138,7 @@ class _AboutCardDesktopState extends State<AboutCardDesktop> {
                 ),
               ],
             ),
-          ).animate(delay: 1000.ms).fadeIn(
+          ).animate(delay: 2000.ms).fadeIn(
                 duration: 4000.ms,
                 curve: Curves.easeIn,
               ),

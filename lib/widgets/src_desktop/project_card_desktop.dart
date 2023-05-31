@@ -2,13 +2,24 @@ import 'package:extra_alignments/extra_alignments.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:sean_codez/app/app.dart';
 import 'package:vrouter/vrouter.dart';
 
 class ProjectCardDesktop extends StatefulWidget {
   const ProjectCardDesktop({
     super.key,
+    required this.imagePath,
+    required this.urlString,
+    required this.title,
+    required this.description,
+    required this.devIcons,
   });
 
+final String imagePath;
+final String urlString;
+final String title;
+final String description;
+final List<Widget> devIcons;
   @override
   State<ProjectCardDesktop> createState() => _ProjectCardDesktopState();
 }
@@ -40,8 +51,8 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
         child: Padding(
           padding: const EdgeInsets.only(top: 60.0),
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
-            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.height * 0.6,
+            width: MediaQuery.of(context).size.width * 0.9,
             child: MouseRegion(
               onEnter: (event) {
                 setState(
@@ -69,11 +80,10 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                     Stack(
                       children: [
                         AspectRatio(
-                          aspectRatio: 1,
+                          aspectRatio: MediaQuery.of(context).size.width > desktopBreakpoint ? 1.4 : 1.1,
                           child: Image.asset(
-                            'assets/images/dmvans_proj.jpg',
+                            widget.imagePath,
                             fit: BoxFit.cover,
-                            alignment: Alignment.centerLeft,
                           ),
                         ),
                         Visibility(
@@ -85,7 +95,7 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                                 child: IconButton(
                                   padding: const EdgeInsets.all(24.0),
                                   onPressed: () => VRouter.of(context).toExternal(
-                                    'dmvans.com',
+                                    widget.urlString,
                                     openNewTab: true,
                                   ),
                                   style: ButtonStyle(
@@ -109,141 +119,107 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                       ],
                     ),
                     Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          TopLeft(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                height: 60,
-                                width: 300,
-                                padding: const EdgeInsets.all(16.0),
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color:
-                                          Theme.of(context).primaryColorLight,
-                                      width: 1,
-                                    ),
-                                  ),
-                                ),
-                                child: Text(
-                                  'Dave and Matt Vans',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headlineSmall!
-                                      .copyWith(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            TopLeft(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 60,
+                                  width: 300,
+                                  padding: const EdgeInsets.all(16.0),
+                                  decoration: BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
                                         color:
                                             Theme.of(context).primaryColorLight,
+                                        width: 1,
                                       ),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(24.0),
-                              child: SizedBox(
-                                child: Text(
-                                  'A web app for a Camper Van manufacturing company located in Colorado. '
-                                  'The app is built with Flutter and Dart as well as many other technologies. '
-                                  'The tech stack chosen for this application allows for multiple apps to be built '
-                                  'from the same codebase. This is a critical feature enabling a single developer to build and maintain '
-                                  'the customer facing app as well as the internal app used by the sales team for creating and '
-                                  'updating van configurations and once confirmed sending those configurations to the manufacturing team.',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge!
-                                      .copyWith(
-                                        color: Theme.of(context)
-                                            .primaryColorLight
-                                            .withOpacity(0.8),
-                                      ),
-                                  textAlign: TextAlign.left,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 32,
-                          ),
-                          BottomLeft(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                height: 60,
-                                width: 300,
-                                padding: const EdgeInsets.all(16.0),
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(
-                                      color:
-                                          Theme.of(context).primaryColorLight,
-                                      width: 1,
                                     ),
                                   ),
-                                ),
-                                child: Text(
-                                  'Built With',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headlineSmall!
-                                      .copyWith(
-                                        color:
-                                            Theme.of(context).primaryColorLight,
-                                      ),
-                                  textAlign: TextAlign.left,
+                                  child: Text(
+                                    widget.title,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineSmall!
+                                        .copyWith(
+                                          color:
+                                              Theme.of(context).primaryColorLight,
+                                        ),
+                                    textAlign: TextAlign.left,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          BottomCenter(
-                            child: Wrap(
-                              spacing: 16.0,
-                              runSpacing: 16.0,
-                              alignment: WrapAlignment.center,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              children: [
-                                const FlutterLogo(
-                                  style: FlutterLogoStyle.horizontal,
-                                  size: 80,
+                            Center(
+                              child: Padding(
+                                padding: const EdgeInsets.all(24.0),
+                                child: SizedBox(
+                                  child: Text(
+                                    widget.description,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge!
+                                        .copyWith(
+                                          color: Theme.of(context)
+                                              .primaryColorLight
+                                              .withOpacity(0.8),
+                                        ),
+                                    textAlign: TextAlign.left,
+                                  ),
                                 ),
-                                Image.asset(
-                                  'assets/dev_icons/dart_icon.png',
-                                  width: 72,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/js_icon.png',
-                                  width: 30,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/google_cloud_platform_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/firebase_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/hasura_icon_light.png',
-                                  width: 80,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/shopify_icon.png',
-                                  width: 80,
-                                ),
-                              ],
+                              ),
                             ),
-                          )
-                        ],
+                            BottomLeft(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 60,
+                                  width: 300,
+                                  padding: const EdgeInsets.all(16.0),
+                                  decoration: BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                        color:
+                                            Theme.of(context).primaryColorLight,
+                                        width: 1,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Built With',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineSmall!
+                                        .copyWith(
+                                          color:
+                                              Theme.of(context).primaryColorLight,
+                                        ),
+                                    textAlign: TextAlign.left,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            BottomCenter(
+                              child: Wrap(
+                                spacing: 16.0,
+                                runSpacing: 16.0,
+                                alignment: WrapAlignment.center,
+                                crossAxisAlignment: WrapCrossAlignment.center,
+                                children: widget.devIcons,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ).animate(delay: 1000.ms).fadeIn(
-                    duration: 2000.ms,
+              ).animate(delay: 2000.ms).fadeIn(
+                    duration: 4000.ms,
                     curve: Curves.easeIn,
                   ),
             ),

@@ -135,9 +135,9 @@ class _PortfolioScaffoldState extends State<PortfolioScaffold> {
             radius: const Radius.circular(12),
             thumbColor: MaterialStateProperty.resolveWith((states) {
               if (states.contains(MaterialState.hovered)) {
-                return Theme.of(context).primaryColor.withOpacity(1);
+                return const Color(0xFF615D6C);
               } else {
-                return Theme.of(context).primaryColor.withOpacity(0.8);
+                return const Color(0xFF615D6C);
               }
             }),
           ),
