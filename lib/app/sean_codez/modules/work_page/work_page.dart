@@ -63,7 +63,7 @@ class _WorkState extends State<Work> with SingleTickerProviderStateMixin {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     child: Image.asset(
-                      'assets/images/voo_sunset_dark.png',
+                      'assets/images/voo_sunset_invert.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

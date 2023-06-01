@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     child: Image.asset(
-                      'assets/images/j_tree_rocks.png',
+                      'assets/images/j_tree_invert.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),

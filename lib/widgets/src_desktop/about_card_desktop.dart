@@ -23,7 +23,7 @@ class _AboutCardDesktopState extends State<AboutCardDesktop> {
           width: MediaQuery.of(context).size.width * 0.8,
           child: Card(
             color:
-                Theme.of(context).colorScheme.onBackground.withOpacity(0.9),
+                Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),

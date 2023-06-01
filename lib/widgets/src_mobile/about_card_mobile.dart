@@ -20,7 +20,7 @@ class _AboutCardMobileState extends State<AboutCardMobile> {
     return Center(
       child: Container(
         height: MediaQuery.of(context).size.height,
-        color: Theme.of(context).colorScheme.onBackground.withOpacity(0.9),
+        color: Theme.of(context).colorScheme.onBackground.withOpacity(0.7),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,

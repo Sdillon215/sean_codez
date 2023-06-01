@@ -31,6 +31,7 @@ class _AboutState extends State<About> {
                   child: Image.asset(
                     'assets/images/castle_valley.jpg',
                     fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
                   ),
                 ).animate().fadeIn(
                       duration: 1000.ms,
@@ -45,8 +46,9 @@ class _AboutState extends State<About> {
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
                     child: Image.asset(
-                      'assets/images/castle_valley_invert.png',
+                      'assets/images/castle_valley_invert.jpg',
                       fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
                     ),
                   ),
                   secondChild: SizedBox(
@@ -55,6 +57,7 @@ class _AboutState extends State<About> {
                     child: Image.asset(
                       'assets/images/castle_valley.jpg',
                       fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
                     ),
                   ),
                 ).animate().fadeIn(
