@@ -1,5 +1,4 @@
 import 'package:extra_alignments/extra_alignments.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:sean_codez/app/app.dart';
@@ -15,11 +14,11 @@ class ProjectCardDesktop extends StatefulWidget {
     required this.devIcons,
   });
 
-final String imagePath;
-final String urlString;
-final String title;
-final String description;
-final List<Widget> devIcons;
+  final String imagePath;
+  final String urlString;
+  final String title;
+  final String description;
+  final List<Widget> devIcons;
   @override
   State<ProjectCardDesktop> createState() => _ProjectCardDesktopState();
 }
@@ -80,7 +79,7 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                     Stack(
                       children: [
                         AspectRatio(
-                          aspectRatio: MediaQuery.of(context).size.width > desktopBreakpoint ? 1.4 : 1.1,
+                          aspectRatio: 1.5,
                           child: Image.asset(
                             widget.imagePath,
                             fit: BoxFit.cover,
@@ -94,17 +93,19 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                               child: BottomCenter(
                                 child: IconButton(
                                   padding: const EdgeInsets.all(24.0),
-                                  onPressed: () => VRouter.of(context).toExternal(
+                                  onPressed: () =>
+                                      VRouter.of(context).toExternal(
                                     widget.urlString,
                                     openNewTab: true,
                                   ),
                                   style: ButtonStyle(
-                                    elevation: MaterialStateProperty.all<double>(
+                                    elevation:
+                                        MaterialStateProperty.all<double>(
                                       24.0,
                                     ),
                                     iconColor: MaterialStateColor.resolveWith(
-                                      (states) => Theme.of(context)
-                                          .primaryColorLight,
+                                      (states) =>
+                                          Theme.of(context).primaryColorLight,
                                     ),
                                   ),
                                   icon: const Icon(
@@ -121,42 +122,48 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                     Expanded(
                       child: SingleChildScrollView(
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             TopLeft(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                  height: 60,
-                                  width: 300,
-                                  padding: const EdgeInsets.all(16.0),
-                                  decoration: BoxDecoration(
-                                    border: Border(
-                                      bottom: BorderSide(
-                                        color:
-                                            Theme.of(context).primaryColorLight,
-                                        width: 1,
-                                      ),
+                              child: Container(
+                                height: 40,
+                                width: 280,
+                                padding: const EdgeInsets.only(
+                                  top: 8.0,
+                                  bottom: 8.0,
+                                  left: 24.0,
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                      color:
+                                          Theme.of(context).primaryColorLight,
+                                      width: 1,
                                     ),
                                   ),
-                                  child: Text(
-                                    widget.title,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineSmall!
-                                        .copyWith(
-                                          color:
-                                              Theme.of(context).primaryColorLight,
-                                        ),
-                                    textAlign: TextAlign.left,
-                                  ),
+                                ),
+                                child: Text(
+                                  widget.title,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall!
+                                      .copyWith(
+                                        color:
+                                            Theme.of(context).primaryColorLight,
+                                      ),
+                                  textAlign: TextAlign.left,
                                 ),
                               ),
                             ),
                             Center(
                               child: Padding(
-                                padding: const EdgeInsets.all(24.0),
+                                padding: const EdgeInsets.only(
+                                  top: 8.0,
+                                  right: 24.0,
+                                  bottom: 8.0,
+                                  left: 24.0,
+                                ),
                                 child: SizedBox(
                                   child: Text(
                                     widget.description,
@@ -173,39 +180,48 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                                 ),
                               ),
                             ),
+                            if (MediaQuery.of(context).size.width >
+                                desktopBreakpoint)
+                              const SizedBox(
+                                height: 50,
+                              ),
                             BottomLeft(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                  height: 60,
-                                  width: 300,
-                                  padding: const EdgeInsets.all(16.0),
-                                  decoration: BoxDecoration(
-                                    border: Border(
-                                      bottom: BorderSide(
-                                        color:
-                                            Theme.of(context).primaryColorLight,
-                                        width: 1,
-                                      ),
+                              child: Container(
+                                height: 40,
+                                width: 180,
+                                padding: const EdgeInsets.only(
+                                  top: 8.0,
+                                  bottom: 8.0,
+                                  left: 24.0,
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                      color:
+                                          Theme.of(context).primaryColorLight,
+                                      width: 1,
                                     ),
                                   ),
-                                  child: Text(
-                                    'Built With',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineSmall!
-                                        .copyWith(
-                                          color:
-                                              Theme.of(context).primaryColorLight,
-                                        ),
-                                    textAlign: TextAlign.left,
-                                  ),
+                                ),
+                                child: Text(
+                                  'Built With',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineSmall!
+                                      .copyWith(
+                                        color:
+                                            Theme.of(context).primaryColorLight,
+                                      ),
+                                  textAlign: TextAlign.left,
                                 ),
                               ),
                             ),
                             BottomCenter(
                               child: Wrap(
-                                spacing: 16.0,
+                                spacing: MediaQuery.of(context).size.width >
+                                        desktopBreakpoint
+                                    ? 80.0
+                                    : 16.0,
                                 runSpacing: 16.0,
                                 alignment: WrapAlignment.center,
                                 crossAxisAlignment: WrapCrossAlignment.center,

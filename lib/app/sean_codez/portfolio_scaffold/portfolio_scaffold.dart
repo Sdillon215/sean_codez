@@ -107,22 +107,22 @@ class _PortfolioScaffoldState extends State<PortfolioScaffold> {
                         ),
                   ),
                 ),
-                // TextButton(
-                //   onPressed: () {
-                //     VRouter.of(context).to('/contact');
-                //   },
-                //   style: ButtonStyle(
-                //     overlayColor: MaterialStateProperty.resolveWith(
-                //       (states) => Colors.transparent,
-                //     ),
-                //   ),
-                //   child: Text(
-                //     'Contact',
-                //     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                //           color: Theme.of(context).primaryColorLight,
-                //         ),
-                //   ),
-                // ),
+                TextButton(
+                  onPressed: () {
+                    VRouter.of(context).to('/contact');
+                  },
+                  style: ButtonStyle(
+                    overlayColor: MaterialStateProperty.resolveWith(
+                      (states) => Colors.transparent,
+                    ),
+                  ),
+                  child: Text(
+                    'Contact',
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                          color: Theme.of(context).primaryColorLight,
+                        ),
+                  ),
+                ),
               ],
             ),
           ),

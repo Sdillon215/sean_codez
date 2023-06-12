@@ -5,16 +5,16 @@ import 'package:sean_codez/app/app.dart';
 import 'package:sean_codez/blocs/blocs.dart';
 import 'package:sean_codez/widgets/widgets.dart';
 
-class About extends StatefulWidget {
-  const About({
+class Contact extends StatefulWidget {
+  const Contact({
     super.key,
   });
 
   @override
-  State<About> createState() => _AboutState();
+  State<Contact> createState() => _ContactState();
 }
 
-class _AboutState extends State<About> {
+class _ContactState extends State<Contact> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SeanCodezBloc, SeanCodezState>(
@@ -65,9 +65,12 @@ class _AboutState extends State<About> {
                       duration: 3000.ms,
                       curve: Curves.easeIn,
                     ),
+                Center(
+                  child: 
                 MediaQuery.of(context).size.width < tabletBreakpoint
-                    ? const AboutCardMobile()
-                    : const AboutCardDesktop(),
+                    ? const ContactCardMobile()
+                    : const ContactCardDesktop(),
+                ),
               ],
             ),
           ],

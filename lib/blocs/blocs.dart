@@ -1,6 +1,7 @@
 library sean_codez_blocs;
 
 export 'package:sean_codez/blocs/sean_codez_bloc/sean_codez_bloc.dart';
+export 'package:sean_codez/blocs/contact_email_bloc/contact_email_bloc.dart';
 
 
 

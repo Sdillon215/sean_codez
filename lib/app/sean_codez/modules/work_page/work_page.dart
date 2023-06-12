@@ -1,12 +1,9 @@
-import 'package:extra_alignments/extra_alignments.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sean_codez/app/app.dart';
 import 'package:sean_codez/blocs/blocs.dart';
 import 'package:sean_codez/widgets/widgets.dart';
-import 'package:vrouter/vrouter.dart';
 
 class Work extends StatefulWidget {
   const Work({
@@ -17,22 +14,7 @@ class Work extends StatefulWidget {
   State<Work> createState() => _WorkState();
 }
 
-class _WorkState extends State<Work> with SingleTickerProviderStateMixin {
-  late AnimationController _customBtnController;
-  late Animation<Offset> _customBtnSlide;
-
-  bool btnHover = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _customBtnController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 600));
-    _customBtnSlide =
-        Tween<Offset>(begin: const Offset(0, 0.5), end: Offset.zero)
-            .animate(_customBtnController);
-  }
-
+class _WorkState extends State<Work> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SeanCodezBloc, SeanCodezState>(
@@ -100,31 +82,52 @@ class _WorkState extends State<Work> with SingleTickerProviderStateMixin {
                                 const FlutterLogo(
                                   style: FlutterLogoStyle.horizontal,
                                   size: 80,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/dart_icon.png',
-                                  width: 72,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/js_icon.png',
-                                  width: 30,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/google_cloud_platform_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/firebase_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/hasura_icon_light.png',
-                                  width: 80,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/shopify_icon.png',
-                                  width: 80,
-                                ),
+                                ).animate(delay: 3200.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const DartIcon().animate(delay: 3400.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const JsIcon().animate(delay: 3600.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const GcpIcon().animate(delay: 3800.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const Ga4Icon().animate(delay: 4000.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const FirebaseIcon()
+                                    .animate(delay: 4200.ms)
+                                    .slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const ShopifyIcon()
+                                    .animate(delay: 4400.ms)
+                                    .slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const HasuraIcon()
+                                    .animate(delay: 4600.ms)
+                                    .slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
                               ],
                             ),
                             ProjectCardDesktop(
@@ -132,41 +135,61 @@ class _WorkState extends State<Work> with SingleTickerProviderStateMixin {
                               imagePath: 'assets/images/floral_vibes.jpg',
                               urlString: 'https://floral-vibez-dev.web.app/',
                               description:
-                                  'Floral Vibes is an E-commerce shop for retail florist products. '
-                                  'This app is still in progress but will soon be leveraged to provide '
+                                  'Floral Vibes is an E-commerce shop for home floral products. '
+                                  'This app is still in progress but will soon provide '
                                   'another sales channel for an already growing business. The website will '
-                                  'utilize event tracking to provide insights into customer behavior and allow '
-                                  'for targeted marketing campaigns.',
+                                  'utilize event tracking to deliver insights into customer behavior and allow '
+                                  'for targeted ad campaigns via Google Analytics, Meta, etc. Also leveraging an '
+                                  'integration with Shopify to handle inventory, payment processing, and shipping '
+                                  'this app will soon be a simple yet robust sales platform.',
                               devIcons: [
                                 const FlutterLogo(
                                   style: FlutterLogoStyle.horizontal,
                                   size: 80,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/dart_icon.png',
-                                  width: 72,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/js_icon.png',
-                                  width: 30,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/google_cloud_platform_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/firebase_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/shopify_icon.png',
-                                  width: 80,
-                                ),
+                                ).animate(delay: 3200.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const DartIcon().animate(delay: 3400.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const JsIcon().animate(delay: 3600.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const GcpIcon().animate(delay: 3800.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const Ga4Icon().animate(delay: 4000.ms).slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const FirebaseIcon()
+                                    .animate(delay: 4200.ms)
+                                    .slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
+                                const ShopifyIcon()
+                                    .animate(delay: 4400.ms)
+                                    .slide(
+                                      begin: const Offset(0, 8),
+                                      duration: 1000.ms,
+                                      curve: Curves.fastEaseInToSlowEaseOut,
+                                    ),
                               ],
                             ),
                           ]
                         : [
-                            ProjectCardMobile(
+                            const ProjectCardMobile(
                               title: 'Dave and Matt Vans',
                               imagePath: 'assets/images/dmvans_proj.jpg',
                               urlString: 'https://dmvans.com',
@@ -178,71 +201,42 @@ class _WorkState extends State<Work> with SingleTickerProviderStateMixin {
                                   'the customer facing app as well as the internal app used by the sales team for creating and '
                                   'updating van configurations and once confirmed sending those configurations to the manufacturing team.',
                               devIcons: [
-                                Image.asset(
-                                  'assets/dev_icons/js_icon.png',
-                                  width: 30,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/google_cloud_platform_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/firebase_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/hasura_icon_light.png',
-                                  width: 80,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/shopify_icon.png',
-                                  width: 80,
-                                ),
-                                const FlutterLogo(
+                                JsIcon(),
+                                GcpIcon(),
+                                Ga4Icon(),
+                                FirebaseIcon(),
+                                ShopifyIcon(),
+                                HasuraIcon(),
+                                FlutterLogo(
                                   style: FlutterLogoStyle.horizontal,
                                   size: 80,
                                 ),
-                                Image.asset(
-                                  'assets/dev_icons/dart_icon.png',
-                                  width: 72,
-                                ),
+                                DartIcon(),
                               ],
                             ),
-                            ProjectCardMobile(
+                            const ProjectCardMobile(
                               title: 'Floral Vibes',
                               imagePath: 'assets/images/floral_vibes.jpg',
                               urlString: 'https://floral-vibez-dev.web.app/',
                               description:
-                                  'Floral Vibes is an E-commerce shop for retail florist products. '
-                                  'This app is still in progress but will soon be leveraged to provide '
+                                  'Floral Vibes is an E-commerce shop for home floral products. '
+                                  'This app is still in progress but will soon provide '
                                   'another sales channel for an already growing business. The website will '
-                                  'utilize event tracking to provide insights into customer behavior and allow '
-                                  'for targeted marketing campaigns.',
+                                  'utilize event tracking to deliver insights into customer behavior and allow '
+                                  'for targeted ad campaigns via Google Analytics, Meta, etc. Also leveraging an '
+                                  'integration with Shopify to handle inventory, payment processing, and shipping '
+                                  'this app will soon be a simple yet robust sales platform.',
                               devIcons: [
-                                Image.asset(
-                                  'assets/dev_icons/js_icon.png',
-                                  width: 30,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/google_cloud_platform_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/firebase_icon.png',
-                                  width: 130,
-                                ),
-                                Image.asset(
-                                  'assets/dev_icons/shopify_icon.png',
-                                  width: 80,
-                                ),
-                                const FlutterLogo(
+                                JsIcon(),
+                                GcpIcon(),
+                                Ga4Icon(),
+                                FirebaseIcon(),
+                                ShopifyIcon(),
+                                FlutterLogo(
                                   style: FlutterLogoStyle.horizontal,
                                   size: 80,
                                 ),
-                                Image.asset(
-                                  'assets/dev_icons/dart_icon.png',
-                                  width: 72,
-                                ),
+                                DartIcon(),
                               ],
                             ),
                           ],
@@ -254,11 +248,5 @@ class _WorkState extends State<Work> with SingleTickerProviderStateMixin {
         ),
       );
     });
-  }
-
-  @override
-  void dispose() {
-    _customBtnController.dispose();
-    super.dispose();
   }
 }

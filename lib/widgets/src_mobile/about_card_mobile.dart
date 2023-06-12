@@ -37,27 +37,40 @@ class _AboutCardMobileState extends State<AboutCardMobile> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Hi I\'m Sean',
-                  style:
-                      Theme.of(context).textTheme.displaySmall!.copyWith(
-                            color: Theme.of(context).primaryColorLight,
-                          ),
-                  textAlign: TextAlign.left,
+              TopLeft(
+                child: Container(
+                  height: 40,
+                  width: 300,
+                  padding: const EdgeInsets.only(
+                    top: 8.0,
+                    bottom: 8.0,
+                    left: 24.0,
+                  ),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Theme.of(context).primaryColorLight,
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                  child: Text(
+                    'Hi I\'m Sean',
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: Theme.of(context).primaryColorLight,
+                        ),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
-              ),
-              Divider(
-                color: Theme.of(context).primaryColorLight,
-                thickness: 1,
-                height: 1,
-                indent: 12,
-                endIndent: 12,
               ),
               SizedBox(
                 child: Padding(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: const EdgeInsets.only(
+                    top: 8.0,
+                    right: 24.0,
+                    bottom: 8.0,
+                    left: 24.0,
+                  ),
                   child: RichText(
                     text: TextSpan(
                       children: <TextSpan>[
