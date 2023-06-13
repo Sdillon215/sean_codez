@@ -5,10 +5,12 @@ class AnimatedButton extends StatefulWidget {
   const AnimatedButton({
     Key? key,
     required this.btnText,
-    this.vRouterPath,
+    // this.vRouterPath,
+    this.onPressed,
   }) : super(key: key);
   final String btnText;
-  final String? vRouterPath;
+  // final String? vRouterPath;
+  final Function? onPressed;
   @override
   _AnimatedButtonState createState() => _AnimatedButtonState();
 }
@@ -22,9 +24,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
       duration: const Duration(milliseconds: 200),
       scale: _hover ? 1.1 : 1,
       child: TextButton(
-        onPressed: () {
-          VRouter.of(context).to(widget.vRouterPath!);
-        },
+        onPressed: widget.onPressed as void Function()?,
         onHover: (value) => setState(() => _hover = value),
         style: ButtonStyle(
           fixedSize: MaterialStateProperty.resolveWith(

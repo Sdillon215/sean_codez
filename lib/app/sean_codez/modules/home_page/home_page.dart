@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sean_codez/app/app.dart';
 import 'package:sean_codez/blocs/blocs.dart';
 import 'package:sean_codez/widgets/widgets.dart';
+import 'package:vrouter/vrouter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -120,19 +121,23 @@ class _HomePageState extends State<HomePage> {
                               : Axis.vertical,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
+                          children: [
                             Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: AnimatedButton(
                                 btnText: 'View My Work',
-                                vRouterPath: '/work',
+                                onPressed: () {
+                                  VRouter.of(context).to('/work');
+                                },
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: AnimatedButton(
                                 btnText: 'About Me',
-                                vRouterPath: '/about',
+                                onPressed: () {
+                                  VRouter.of(context).to('/about');
+                                },
                               ),
                             ),
                           ],

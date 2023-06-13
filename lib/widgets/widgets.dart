@@ -1,6 +1,7 @@
 // General widgets
 export 'package:sean_codez/widgets/src/animated_button.dart';
 export 'package:sean_codez/widgets/src_dev_icons/dev_icons.dart';
+export 'package:sean_codez/widgets/src/contact_form.dart';
 
 // Desktop widgets
 export 'package:sean_codez/widgets/src_desktop/about_card_desktop.dart';

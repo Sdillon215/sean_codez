@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:vrouter/vrouter.dart';
 
 class DartIcon extends StatelessWidget {
   const DartIcon({super.key});
@@ -80,6 +82,65 @@ class HasuraIcon extends StatelessWidget {
     return Image.asset(
       'assets/dev_icons/hasura_icon_light.png',
       width: 80,
+    );
+  }
+}
+
+class LinkedIconBtn extends StatelessWidget {
+  const LinkedIconBtn({super.key, required this.theme});
+  final bool theme;
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () => VRouter.of(context)
+          .toExternal('https://www.linkedin.com/in/seandillon215/'),
+      icon: FaIcon(
+        FontAwesomeIcons.linkedin,
+        color: theme
+            ? Theme.of(context).primaryColorDark.withOpacity(0.8)
+            : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.6),
+        size: 60,
+      ),
+    );
+  }
+}
+
+class InstagramIconBtn extends StatelessWidget {
+  const InstagramIconBtn({super.key, required this.theme});
+  final bool theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () => VRouter.of(context)
+          .toExternal('https://www.instagram.com/taco_sendz'),
+      icon: FaIcon(
+        FontAwesomeIcons.instagram,
+        color: theme
+            ? Theme.of(context).primaryColorDark.withOpacity(0.8)
+            : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.6),
+        size: 60,
+      ),
+    );
+  }
+}
+
+class GithubIconBtn extends StatelessWidget {
+  const GithubIconBtn({super.key, required this.theme});
+  final bool theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () =>
+          VRouter.of(context).toExternal('https://github.com/Sdillon215'),
+      icon: FaIcon(
+        FontAwesomeIcons.github,
+        color: theme
+            ? Theme.of(context).primaryColorDark.withOpacity(0.8)
+            : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.6),
+        size: 60,
+      ),
     );
   }
 }

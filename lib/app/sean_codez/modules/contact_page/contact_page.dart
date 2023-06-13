@@ -66,10 +66,9 @@ class _ContactState extends State<Contact> {
                       curve: Curves.easeIn,
                     ),
                 Center(
-                  child: 
-                MediaQuery.of(context).size.width < tabletBreakpoint
-                    ? const ContactCardMobile()
-                    : const ContactCardDesktop(),
+                  child: MediaQuery.of(context).size.width < tabletBreakpoint
+                      ? const ContactCardMobile()
+                      : const ContactCardDesktop(),
                 ),
               ],
             ),
