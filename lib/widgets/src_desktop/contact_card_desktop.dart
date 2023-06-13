@@ -1,11 +1,8 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sean_codez/app/app.dart';
 import 'package:sean_codez/blocs/blocs.dart';
 import 'package:sean_codez/widgets/widgets.dart';
-import 'package:vrouter/vrouter.dart';
 
 class ContactCardDesktop extends StatefulWidget {
   const ContactCardDesktop({

@@ -38,7 +38,7 @@ class _ContactFormState extends State<ContactForm> {
                   hintText: 'Name',
                   filled: true,
                   fillColor: appState.darkTheme
-                      ? Theme.of(context).primaryColorDark.withOpacity(0.5)
+                      ? Theme.of(context).primaryColorDark.withOpacity(0.7)
                       : Theme.of(context)
                           .colorScheme
                           .primaryContainer
@@ -75,7 +75,7 @@ class _ContactFormState extends State<ContactForm> {
                   hintText: 'Email',
                   filled: true,
                   fillColor: appState.darkTheme
-                      ? Theme.of(context).primaryColorDark.withOpacity(0.5)
+                      ? Theme.of(context).primaryColorDark.withOpacity(0.7)
                       : Theme.of(context)
                           .colorScheme
                           .primaryContainer
@@ -110,7 +110,7 @@ class _ContactFormState extends State<ContactForm> {
                   hintText: 'Questions, Comments, Project Inquiries',
                   filled: true,
                   fillColor: appState.darkTheme
-                      ? Theme.of(context).primaryColorDark.withOpacity(0.5)
+                      ? Theme.of(context).primaryColorDark.withOpacity(0.7)
                       : Theme.of(context)
                           .colorScheme
                           .primaryContainer

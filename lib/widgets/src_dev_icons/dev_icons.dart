@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sean_codez/app/app.dart';
 import 'package:vrouter/vrouter.dart';
 
 class DartIcon extends StatelessWidget {
@@ -97,7 +98,9 @@ class LinkedIconBtn extends StatelessWidget {
       icon: FaIcon(
         FontAwesomeIcons.linkedin,
         color: theme
-            ? Theme.of(context).primaryColorDark.withOpacity(0.8)
+            ? MediaQuery.of(context).size.width < mobileBreakpoint
+                ? Theme.of(context).colorScheme.onBackground
+                : Theme.of(context).primaryColorDark.withOpacity(0.8)
             : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.6),
         size: 60,
       ),
@@ -117,7 +120,9 @@ class InstagramIconBtn extends StatelessWidget {
       icon: FaIcon(
         FontAwesomeIcons.instagram,
         color: theme
-            ? Theme.of(context).primaryColorDark.withOpacity(0.8)
+            ? MediaQuery.of(context).size.width < mobileBreakpoint
+                ? Theme.of(context).colorScheme.onBackground
+                : Theme.of(context).primaryColorDark.withOpacity(0.8)
             : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.6),
         size: 60,
       ),
@@ -137,7 +142,9 @@ class GithubIconBtn extends StatelessWidget {
       icon: FaIcon(
         FontAwesomeIcons.github,
         color: theme
-            ? Theme.of(context).primaryColorDark.withOpacity(0.8)
+            ? MediaQuery.of(context).size.width < mobileBreakpoint
+                ? Theme.of(context).colorScheme.onBackground
+                : Theme.of(context).primaryColorDark.withOpacity(0.8)
             : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.6),
         size: 60,
       ),
