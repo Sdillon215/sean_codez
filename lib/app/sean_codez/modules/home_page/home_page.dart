@@ -31,11 +31,11 @@ class _HomePageState extends State<HomePage> {
                     fit: BoxFit.cover,
                   ),
                 ).animate().fadeIn(
-                      duration: 1000.ms,
+                      duration: 800.ms,
                       curve: Curves.easeIn,
                     ),
                 AnimatedCrossFade(
-                  duration: 3000.ms,
+                  duration: 2800.ms,
                   crossFadeState: appState.darkTheme
                       ? CrossFadeState.showFirst
                       : CrossFadeState.showSecond,
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ).animate().fadeIn(
                       delay: 500.ms,
-                      duration: 3000.ms,
+                      duration: 2800.ms,
                       curve: Curves.easeIn,
                     ),
                 Align(
@@ -83,7 +83,11 @@ class _HomePageState extends State<HomePage> {
                                   .copyWith(
                                     color: Theme.of(context).primaryColorLight,
                                   ),
-                        ),
+                        ).animate(delay: 2800.ms).slide(
+                                    begin: const Offset(0, -12),
+                                    duration: 1000.ms,
+                                    curve: Curves.fastEaseInToSlowEaseOut,
+                                  ),
                         Text(
                           'Nomad | Full Stack Engineer | Climber',
                           style: MediaQuery.of(context).size.width <
@@ -100,7 +104,11 @@ class _HomePageState extends State<HomePage> {
                                   .copyWith(
                                     color: Theme.of(context).primaryColorLight,
                                   ),
-                        ),
+                        ).animate(delay: 2900.ms).slide(
+                                    begin: const Offset(12, 0),
+                                    duration: 1000.ms,
+                                    curve: Curves.fastEaseInToSlowEaseOut,
+                                  ),
                         Divider(
                           color: Theme.of(context).primaryColorLight,
                           thickness: 1,
@@ -113,7 +121,11 @@ class _HomePageState extends State<HomePage> {
                                   tabletBreakpoint
                               ? MediaQuery.of(context).size.width * 0.05
                               : MediaQuery.of(context).size.width * 0.3,
-                        ),
+                        ).animate(delay: 3000.ms).slide(
+                                    begin: const Offset(-12, 0),
+                                    duration: 1000.ms,
+                                    curve: Curves.fastEaseInToSlowEaseOut,
+                                  ),
                         Flex(
                           direction: MediaQuery.of(context).size.width >
                                   tabletBreakpoint
@@ -129,7 +141,11 @@ class _HomePageState extends State<HomePage> {
                                 onPressed: () {
                                   VRouter.of(context).to('/work');
                                 },
-                              ),
+                              ).animate(delay: 3000.ms).slide(
+                                    begin: const Offset(0, 20),
+                                    duration: 1000.ms,
+                                    curve: Curves.fastEaseInToSlowEaseOut,
+                                  ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -138,7 +154,24 @@ class _HomePageState extends State<HomePage> {
                                 onPressed: () {
                                   VRouter.of(context).to('/about');
                                 },
-                              ),
+                              ).animate(delay: 3200.ms).slide(
+                                    begin: const Offset(0, 20),
+                                    duration: 1000.ms,
+                                    curve: Curves.fastEaseInToSlowEaseOut,
+                                  ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: AnimatedButton(
+                                btnText: 'Contact',
+                                onPressed: () {
+                                  VRouter.of(context).to('/contact');
+                                },
+                              ).animate(delay: 3400.ms).slide(
+                                    begin: const Offset(0, 20),
+                                    duration: 1000.ms,
+                                    curve: Curves.fastEaseInToSlowEaseOut,
+                                  ),
                             ),
                           ],
                         ),

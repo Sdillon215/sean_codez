@@ -191,7 +191,7 @@ class _WorkState extends State<Work> {
                         : [
                             const ProjectCardMobile(
                               title: 'Dave and Matt Vans',
-                              imagePath: 'assets/images/dmvans_proj.jpg',
+                              imagePath: 'assets/images/dmvans_proj.png',
                               urlString: 'https://dmvans.com',
                               description:
                                   'A web app for a Camper Van manufacturing company located in Colorado. '

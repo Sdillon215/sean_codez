@@ -234,10 +234,10 @@ class _ProjectCardDesktopState extends State<ProjectCardDesktop>
                     ),
                   ],
                 ),
-              ).animate(delay: 2000.ms).fadeIn(
-                    duration: 4000.ms,
-                    curve: Curves.easeIn,
-                  ),
+              ).animate(delay: 1600.ms).fadeIn(
+                duration: 3400.ms,
+                curve: Curves.easeIn,
+              ),
             ),
           ),
         ),

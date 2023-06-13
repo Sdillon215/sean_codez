@@ -12,7 +12,7 @@ abstract class ContactEmailState
   bool get messageSent;
 
   factory ContactEmailState([Function(ContactEmailStateBuilder b) updates]) =
-      _$ContactEmailState; 
+      _$ContactEmailState;
 }
 
 class ContactEmailBloc extends Bloc<ContactEmailEvent, ContactEmailState> {
@@ -28,9 +28,9 @@ class ContactEmailBloc extends Bloc<ContactEmailEvent, ContactEmailState> {
   void _registerEventHandlers() {
     on<SendContactEmail>((event, emit) async {
       Map<String, dynamic> templateParams = {
-        'from_name': 'Test Bruh',
-        'from_email': 'test@email.com',
-        'message': 'Check this out it might work!'
+        'from_name': event.name,
+        'from_email': event.email,
+        'message': event.message,
       };
 
       try {
@@ -61,5 +61,13 @@ abstract class ContactEmailEvent {
 }
 
 class SendContactEmail extends ContactEmailEvent {
-  const SendContactEmail();
+  SendContactEmail({
+    required this.name,
+    required this.email,
+    required this.message,
+  });
+
+  final String name;
+  final String email;
+  final String message;
 }

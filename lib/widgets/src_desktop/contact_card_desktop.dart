@@ -99,33 +99,33 @@ class _ContactCardDesktopState extends State<ContactCardDesktop> {
                               theme: appState.darkTheme,
                             )
                                 .animate(
-                                  delay: 3800.ms,
+                                  delay: 4000.ms,
                                 )
                                 .slide(
                                   begin: const Offset(-8, 0),
-                                  duration: 1000.ms,
+                                  duration: 1200.ms,
                                   curve: Curves.fastEaseInToSlowEaseOut,
                                 ),
                             LinkedIconBtn(
                               theme: appState.darkTheme,
                             )
                                 .animate(
-                                  delay: 3600.ms,
+                                  delay: 3800.ms,
                                 )
                                 .slide(
                                   begin: const Offset(0, 8),
-                                  duration: 1000.ms,
+                                  duration: 1200.ms,
                                   curve: Curves.fastEaseInToSlowEaseOut,
                                 ),
                             InstagramIconBtn(
                               theme: appState.darkTheme,
                             )
                                 .animate(
-                                  delay: 3800.ms,
+                                  delay: 4000.ms,
                                 )
                                 .slide(
                                   begin: const Offset(8, 0),
-                                  duration: 1000.ms,
+                                  duration: 1200.ms,
                                   curve: Curves.fastEaseInToSlowEaseOut,
                                 ),
                           ],
@@ -136,13 +136,10 @@ class _ContactCardDesktopState extends State<ContactCardDesktop> {
                 ),
               ),
             )
-                .animate(
-                  delay: 2000.ms,
-                )
-                .fadeIn(
-                  duration: 4000.ms,
-                  curve: Curves.easeIn,
-                ),
+                .animate(delay: 1800.ms).fadeIn(
+                duration: 3400.ms,
+                curve: Curves.easeIn,
+              ),
           ),
         ),
       );

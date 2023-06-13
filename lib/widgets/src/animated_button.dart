@@ -42,8 +42,11 @@ class _AnimatedButtonState extends State<AnimatedButton> {
             (states) => RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(0),
               side: BorderSide(
-                color: Theme.of(context).primaryColorLight,
-                width: 1,
+                color: _hover
+                    ? Theme.of(context).primaryColor
+                    : Theme.of(context).primaryColorLight,
+                width: _hover ? 2 : 1,
+                strokeAlign: BorderSide.strokeAlignCenter,
               ),
             ),
           ),
@@ -51,7 +54,9 @@ class _AnimatedButtonState extends State<AnimatedButton> {
         child: Text(
           widget.btnText,
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: _hover ?Theme.of(context).primaryColorDark : Theme.of(context).primaryColorLight,
+                color: _hover
+                    ? Theme.of(context).primaryColorDark
+                    : Theme.of(context).primaryColorLight,
               ),
         ),
       ),

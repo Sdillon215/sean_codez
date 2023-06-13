@@ -34,11 +34,11 @@ class _AboutState extends State<About> {
                     alignment: Alignment.topRight,
                   ),
                 ).animate().fadeIn(
-                      duration: 1000.ms,
+                      duration: 800.ms,
                       curve: Curves.easeIn,
                     ),
                 AnimatedCrossFade(
-                  duration: 3000.ms,
+                  duration: 2800.ms,
                   crossFadeState: appState.darkTheme
                       ? CrossFadeState.showFirst
                       : CrossFadeState.showSecond,
@@ -62,7 +62,7 @@ class _AboutState extends State<About> {
                   ),
                 ).animate().fadeIn(
                       delay: 500.ms,
-                      duration: 3000.ms,
+                      duration: 2800.ms,
                       curve: Curves.easeIn,
                     ),
                 MediaQuery.of(context).size.width < tabletBreakpoint

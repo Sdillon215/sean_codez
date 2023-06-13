@@ -139,12 +139,13 @@ class _ContactFormState extends State<ContactForm> {
                 btnText: 'Send',
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    print('name');
-                    print(_name);
-                    print('email');
-                    print(_email);
-                    print('message');
-                    print(_message);
+                    BlocProvider.of<ContactEmailBloc>(context).add(
+                      SendContactEmail(
+                        name: _name!,
+                        email: _email!,
+                        message: _message!,
+                      ),
+                    );
                     setState(() {
                       _formKey.currentState!.reset();
                     });

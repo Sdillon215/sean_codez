@@ -140,10 +140,10 @@ class _AboutCardMobileState extends State<AboutCardMobile> {
             ],
           ),
         ),
-      ).animate(delay: 2000.ms).fadeIn(
-            duration: 4000.ms,
-            curve: Curves.easeIn,
-          ),
+      ).animate(delay: 1800.ms).fadeIn(
+                duration: 3400.ms,
+                curve: Curves.easeIn,
+              ),
     );
   }
 }
